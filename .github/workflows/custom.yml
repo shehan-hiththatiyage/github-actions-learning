@@ -1,0 +1,30 @@
+name: Custom Develop Workflow
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: sample-app
+        run: npm install
+
+      - name: Run tests
+        working-directory: sample-app
+        run: npm test
+
+
+        
