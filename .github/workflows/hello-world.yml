@@ -2,6 +2,7 @@ name: Hello World Workflow
 
 on:
   push:
+  # This workflow runs on every push
     branches: [main, develop]
   workflow_dispatch:
 
